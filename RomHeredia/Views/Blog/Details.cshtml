@@ -1,0 +1,62 @@
+﻿@model RomHeredia.Models.BlogPost
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Details</h2>
+<div>
+    <h4>BlogPost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Posted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Posted)
+        </dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+    
+    @foreach (var item in Model.BlogComments)
+    {
+        <div class="media">
+            <div class="media-body">
+                <h5>@Html.DisplayFor(modelItem => item.Author)</h5>
+                @Html.DisplayFor(modelItem => item.Body)
+            </div>
+        </div>
+    }
+
+    
+    <div class="new-comment">
+        <form role="form" >
+            <div class="form-group">
+                <textarea name="Body" class="new-comment form-control" placeholder="Enter comment here..."></textarea>
+                <button type="submit" id="submitId" class="btn btn-default">Add Comment</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
