@@ -4,23 +4,26 @@
     ViewData["Title"] = "Blog";
 }
 
-<h2>Blog</h2>
+<div class="page-title">
+    <h2>Blog</h2>
+    <a class="btn btn-default" asp-action="Create">Create New Blog</a>
+</div>
 
-<p>
-    <a asp-action="Create">Create New Blog</a>
-</p>
-@foreach (var item in Model)
-{
-    <div class="media">
-        <div class="media-body">
-            <h4 class="media-heading">@Html.DisplayFor(modelItem => item.Title)</h4>
+<article id="blogPosts">
+    @foreach (var item in Model)
+    {
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">@Html.DisplayFor(modelItem => item.Title)</h4>
 
-            <span>@item.Posted.ToShortDateString()</span> by <span>@Html.DisplayFor(modelItem => item.Author)</span>
-            <p>@Html.DisplayFor(modelItem => item.Body)</p>
+                <span>@item.Posted.ToShortDateString()</span> by <span>@Html.DisplayFor(modelItem => item.Author)</span>
+                <p>@Html.DisplayFor(modelItem => item.Body)</p>
 
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger">Delete</a>
+            </div>
         </div>
-    </div>
-}
+    }
+
+</article>

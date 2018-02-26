@@ -1,35 +1,55 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+﻿html, body {
+    height: 100%;
     width: 100%;
+    font-family: 'Open Sans', serif;
+    background: radial-gradient(#99a3e8,#8fbbe4);
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+h1, h2, h3, h4, h5 {
+     font-family: 'PT Sans', sans-serif; 
+    /*font-family: 'Gochi Hand', cursive;*/
+    margin: 0;
+    font-weight: 800;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+.btn {
+    border-radius: 1.5rem;
+    padding: 4px 18px;
+}
+
+nav {
+    background: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0px 2px 4px #3333336e;
+}
+
+nav a {
+    color: #18323a;
+}
+
+#home {
+    min-height: 40px;
+    background: #18323a;
+}
+
+.page-title {
+    padding: 2rem;
+}
+
+#blogPosts {
+    padding: 2rem;
+    background: #ffffff;
+}
+
+#skills {
+    background: #ffffff;
+    padding: 4rem 2rem;
+    box-shadow: 0px 0px 4px #3333336e;
+    margin-bottom: 4rem;
+}
+
+#skills .skills-header {
+    font-size: 32px;
+    margin: 4px 0 8px;
 }
