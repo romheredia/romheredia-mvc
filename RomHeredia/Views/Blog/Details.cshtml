@@ -36,25 +36,24 @@
         <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
         <a asp-action="Index">Back to List</a>
     </div>
-    
-    @foreach (var item in Model.BlogComments)
-    {
-        <div class="media">
-            <div class="media-body">
-                <h5>@Html.DisplayFor(modelItem => item.Author)</h5>
-                @Html.DisplayFor(modelItem => item.Body)
-            </div>
-        </div>
-    }
 
-    
-    <div class="new-comment">
-        <form role="form" >
-            <div class="form-group">
-                <textarea name="Body" class="new-comment form-control" placeholder="Enter comment here..."></textarea>
-                <button type="submit" id="submitId" class="btn btn-default">Add Comment</button>
+    @*@foreach (var item in Model.BlogComments)
+        {
+            <div class="media">
+                <div class="media-body">
+                    <h5>@Html.DisplayFor(modelItem => item.Author)</h5>
+                    @Html.DisplayFor(modelItem => item.Body)
+                </div>
             </div>
-        </form>
+        }*@
+
+    <div id="commentsContainer" class="comments-container" data-post-id="@Model.Id">
+        <table class="table table-bordered" id="Table">
+            <tr>
+                <th>Comment</th>
+
+            </tr>   <!--end of table-row -->
+        </table>   <!--end of table -->
     </div>
 
 </div>

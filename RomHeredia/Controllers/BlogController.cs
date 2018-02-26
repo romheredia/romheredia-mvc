@@ -44,23 +44,6 @@ namespace RomHeredia.Controllers
             return View(blogPost);
         }
 
-        // POST: Blog/Details/5?
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Details([Bind("Id,Title,Author,Body,Posted")] BlogComment blogComment)
-        {
-            blogComment.Author = User.Identity.Name;
-            blogComment.Posted = DateTime.Now;
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-            // GET: Blog/Create
-            public IActionResult Create()
-        {
-            return View();
-        }
-
         // POST: Blog/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
